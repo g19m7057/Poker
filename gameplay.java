@@ -7,7 +7,6 @@ public class gameplay{
 		System.out.println("\tWELCOME TO CASINO WARS\n");
 		poker p1 = new poker();
 		Scanner in = new Scanner(System.in);
-		String cis = ""; // variable used for input yes or no
 		LinkedList<String> list = p1.dealer(); // deals the four cards
 		
 		System.out.println("if player[0]");
@@ -33,6 +32,7 @@ public class gameplay{
 				System.out.print("Do you want to GO TO WAR [yes] or no[no]: \n");
 				String con = in.next();
 				con = con.toLowerCase();
+
 				while(!con.equals("yes") && !con.equals("no")){
 					System.out.print("invalid input\n Do you want to GO TO WAR [yes] or not[no]: ");
 					con = in.next();
@@ -98,6 +98,7 @@ public class gameplay{
 			}
 
 		}
+		in.close();
 	}
 
 	public static String player(LinkedList<String> list) // player card selection
@@ -110,6 +111,7 @@ public class gameplay{
 			System.out.print("which card do you want [1] [2] [3] [4] [5] [6]: ");
 			x = in.nextInt();
 		}
+		in.close();
 		return list.get(x-1);
 	}
 
